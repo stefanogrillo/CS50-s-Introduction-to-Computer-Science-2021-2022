@@ -7,6 +7,7 @@ So far you can find solutions to pset 1. If you like it, please leave a star ⭐
 ## Structure 
 - [Problem Set 1](https://cs50.harvard.edu/x/2021/psets/1/)
   - hello.c
+  - population.c
   - mario.c
   - cash.c
   - credit.c
