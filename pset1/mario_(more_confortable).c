@@ -11,4 +11,6 @@ int main(void)
     {
         height = get_int("Height: ");
     }
+    // Size must be between 1 and 8 included
+    while (height < 1 || height > 8);
 }
