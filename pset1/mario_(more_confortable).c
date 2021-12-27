@@ -13,4 +13,16 @@ int main(void)
     }
     // Size must be between 1 and 8 included
     while (height < 1 || height > 8);
+    
+     for (int lenght = 0; lenght < height; lenght++)
+    {
+         for (int hash = 0; hash < lenght + 1; hash++)
+        {
+            // Print "#" from 1 to hash times, one more hash each new row
+            printf("#");
+        }
+
+        // Go to a new line after each loop is completed
+        printf("\n");
+     }
 }
