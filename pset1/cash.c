@@ -13,4 +13,21 @@ int main(void)
     }
     while (owed < 0.009);
     // To control: printf("%.2f\n", owed);
+      
+    int coins = 0;
+
+    // How many .25 coins?
+    while (owed >= 0.249)
+    {
+        owed -= 0.25;
+        coins++;
+    }
+
+    // How many .10 coins?
+    while (owed >= 0.099)
+    {
+        owed -= 0.10;
+        coins++;
+    }
+
 }
