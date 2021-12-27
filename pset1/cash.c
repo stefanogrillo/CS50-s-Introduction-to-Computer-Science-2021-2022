@@ -1,3 +1,5 @@
+// Greedy algorithm: minimize the number of coins you’re dispensing for each customer
+
 #include <stdio.h>
 #include <cs50.h>
 #include <math.h>
@@ -30,4 +32,19 @@ int main(void)
         coins++;
     }
 
+    // How many .05 coins?
+    while (owed >= 0.049)
+    {
+        owed -= 0.05;
+        coins++;
+    }
+
+    // How many .01 coins?
+    while (owed >= 0.009)
+    {
+        owed -= 0.01;
+        coins++;
+    }
+
+    printf("%i\n", coins);
 }
