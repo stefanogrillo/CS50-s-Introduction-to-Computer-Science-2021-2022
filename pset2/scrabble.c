@@ -36,3 +36,24 @@ int main(void)
         printf("Player 2 wins!\n");
     }
 }
+
+int compute_score(string word)
+{
+    // TODO: Compute and return score for string
+    int score = 0;
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
+        // Uppercase
+        word[i] = toupper(word[i]);
+
+        // What's the position of the letter? Use the position to find the relative value in POINTS. Sum POINTS for each string
+        for (int e = 0; ALPHA[e]; e++)
+        {
+            if (word[i] == ALPHA[e])
+            {
+                score = POINTS[e] + score;
+            }
+        }
+    }
+    return score;
+}
