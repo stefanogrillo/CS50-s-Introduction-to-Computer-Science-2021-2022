@@ -49,3 +49,51 @@ int main(void)
         printf("Grade %0.0f\n", rounded);
     }
 }
+
+// Functions
+int count_letters(string text)
+{
+    int letters = 0;
+    for (int i = 0, n = strlen(text); i < n; i++)
+    {
+        // Consider only letters between A && Z, and between a && z, otherwise don't increase the variable
+        if ((text[i] >= 'A' && text[i] <= 'Z') || (text[i] >= 'a' && text[i] <= 'z'))
+        {
+            letters ++;
+        }
+    }
+    return letters;
+}
+
+int count_words(string text)
+{
+    int words = 0;
+    for (int i = 0, n = strlen(text); i < n; i++)
+    {
+        // Count the spaces to count the words
+        if (text[i] == ' ')
+        {
+            words++;
+        }
+    }
+    // Count 1 space more because the final dot has no space but still it's a word
+    if (strlen(text) > 0)
+    {
+        words++;
+    }
+    return words;
+}
+
+int count_sentences(string text)
+{
+    int sentences = 0;
+    for (int i = 0, n = strlen(text); i < n; i++)
+    {
+        // Count for the signals that a sentence is concluded 
+        if ((text[i] == '.') || (text[i] == '?') || (text[i] == '!'))
+        {
+            sentences++;
+        }
+    }
+    return sentences;
+}
