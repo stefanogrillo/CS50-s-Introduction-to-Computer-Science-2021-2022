@@ -1,0 +1,51 @@
+// Given a key (a set of 26 non-repeating letters) this program aims to encrypt any message requested by the user
+// Not yet completed
+
+#include <ctype.h>
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(int argc, string argv[])
+{
+    // There must be only two arguments
+    if (argc == 2)
+    {
+        // Requisites for the Key (1: lenght = 26)
+        if (strlen(argv[1]) == 26)
+        {
+            // Requisites for the Key: argv[1] must be alphabetical and non repetitive
+            for (int i = 0, n = strlen(argv[1]); i < n; i++)
+            {
+                // Requisites for the Key (2: key must not contain numbers)
+                if (isalpha(argv[1][i]) == false)
+                {
+                    printf("Key must only contain alphabetic characters.\n");
+                    return 1;
+                }
+                // Requisites for the Key (3: key must not have repetitive elements)
+                for (int j = i + 1, m = strlen(argv[1]); j < m; j++)
+                {
+                    if (toupper(argv[1][i]) == toupper(argv[1][j]))
+                    {
+                        printf("Key must not contain repeated characters.\n");
+                        return 1;
+                    }
+                }
+            }
+            printf("\n");
+            return 0;
+        }
+        else
+        {
+            printf("Key must contain 26 characters.\n");
+            return 1;
+        }
+    }
+    else
+    {
+        printf("Usage: ./substitution KEY\n");
+        return 1;
+    }
+}
