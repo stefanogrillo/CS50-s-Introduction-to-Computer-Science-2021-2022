@@ -19,3 +19,4 @@ Please leave a star ⭐️ if you like these solutions. More on the way, let's s
     - scrabble.c
   - readability.c
   - caesar.c
+  - substitution.c
