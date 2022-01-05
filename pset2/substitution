@@ -1,5 +1,4 @@
 // Given a key (a set of 26 non-repeating letters) this program aims to encrypt any message requested by the user
-// Not yet completed
 
 #include <ctype.h>
 #include <cs50.h>
@@ -24,7 +23,8 @@ int main(int argc, string argv[])
                     printf("Key must only contain alphabetic characters.\n");
                     return 1;
                 }
-                // Requisites for the Key (3: key must not have repetitive elements)
+                // Requisites for the Key (3: key must not have repetitive elements) 
+                // Check if subsequent characters are equal to the current one (if character at position i, then start from i + 1)
                 for (int j = i + 1, m = strlen(argv[1]); j < m; j++)
                 {
                     if (toupper(argv[1][i]) == toupper(argv[1][j]))
@@ -32,6 +32,28 @@ int main(int argc, string argv[])
                         printf("Key must not contain repeated characters.\n");
                         return 1;
                     }
+                }
+            }
+            // Get the text from the user
+            string text = get_string("plaintext: ");
+            printf("ciphertext: ");
+            // Program
+            for (int i = 0, n = strlen(text); i < n; i++)
+            {
+                // Lowercase letters must be encrypted into a new lowercase character 
+                if (isalpha(text[i]) && islower(text[i]))
+                {
+                    printf("%c", tolower(argv[1][text[i] - 97]));
+                }
+                // Uppercase letters must be encrypted into a new uppercase character 
+                else if (isalpha(text[i]) && isupper(text[i]))
+                {
+                    printf("%c", toupper(argv[1][text[i] - 65]));
+                }
+                // Maintain punctuations and numbers
+                else
+                {
+                    printf("%c", text[i]);
                 }
             }
             printf("\n");
