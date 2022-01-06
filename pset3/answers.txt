@@ -1,0 +1,13 @@
+sort1 uses: Bubble Sort
+
+How do you know?: It's the second fastest in sorted50000.txt on average [this is expected since BS has Ω(n)];
+                    Moreover, BS is the slowest in all other cases.
+
+sort2 uses: Merge Sort
+
+How do you know?: The fastest in all cases on average [this is expected since Θ(n log n)]
+
+sort3 uses: Selection Sort
+
+How do you know?: Second fastest in random and reversed, with similar times among all the options considered
+                    [this is expected since O(n^2) == Ω(n^2)]
