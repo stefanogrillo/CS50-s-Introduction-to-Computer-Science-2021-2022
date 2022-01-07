@@ -22,4 +22,5 @@ Please leave a star ⭐️ if you like these solutions. More on the way, let's s
   - substitution.c
 ### - [Problem Set 3 (2022)](https://cs50.harvard.edu/x/2022/psets/3/)
   - Lab 3
-    - answers.txt 
+    - answers.txt
+  - plurality.c
