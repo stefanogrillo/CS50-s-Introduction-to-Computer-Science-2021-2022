@@ -77,3 +77,28 @@ bool vote(string name)
     }
     return false;
 }
+
+// Print the winner (or winners) of the election
+void print_winner(void)
+{
+    // New variable to keep track of the candidates[i] with most votes
+    int greatest = 0;
+    // Check the candidate with most votes and keep track
+    for (int i = 0, n = candidate_count; i < n; i++)
+    {
+        if (candidates[i].votes > greatest)
+        {
+            greatest = candidates[i].votes;
+        }
+    }
+
+    // Among all the candidates, print the one(s) with most votes (ones if there's a tie)
+    for (int i = 0, n = candidate_count; i < n; i++)
+    {
+        if (greatest == candidates[i].votes)
+        {
+            printf("%s\n", candidates[i].name);
+        }
+    }
+    return;
+}
