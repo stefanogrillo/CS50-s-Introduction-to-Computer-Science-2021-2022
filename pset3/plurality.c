@@ -1,5 +1,4 @@
 // Program that asks voters to insert the name of their candidate, counts it (if existing), and prints the winner
-// Under construction
 
 #include <cs50.h>
 #include <stdio.h>
