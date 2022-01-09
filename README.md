@@ -25,3 +25,4 @@ Please leave a star ⭐️ if you like these solutions. More on the way, let's s
     - answers.txt
   - plurality.c
   - runoff.c
+  - tideman.c
