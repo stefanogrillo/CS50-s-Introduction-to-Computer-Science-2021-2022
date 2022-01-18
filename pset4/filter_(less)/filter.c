@@ -1,4 +1,4 @@
-// File already given by the CS50
+// File already given by CS50
 // Main program, which doesn't contain the filters 
 
 #include <getopt.h>
