@@ -1,3 +1,4 @@
+// File already given by the CS50
 // BMP-related data types based on Microsoft's own
 
 #include <stdint.h>
