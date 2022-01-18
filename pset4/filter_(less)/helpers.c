@@ -19,3 +19,13 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     }
     return;
 }
+
+// Set limit to RGB 255
+int limit(int RGB)
+{
+    if (RGB > 255)
+    {
+        RGB = 255;
+    }
+    return RGB;
+}
