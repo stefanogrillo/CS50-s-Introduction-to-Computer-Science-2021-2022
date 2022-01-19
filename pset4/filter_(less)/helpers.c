@@ -6,10 +6,10 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    // For every column
+    // For every row
     for (int i = 0, n = height; i < n; i++)
     {
-        // For every row (which, combined to the above, means: for every pixel)
+        // For every column (which, combined to the above, means: for every pixel)
         for (int j = 0, m = width; j < m; j++)
         {
             // Find the average value of Red, Green and Blue
@@ -108,19 +108,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             
             // To Blur the image, we must average the RGB values of local pixels; we do so considering a square around the pixel[i][j]
             // Loop for the surrounding pixels (the square around the pixel[i][j]: i && i +/- 1; j && j +/- 1)
-            // (i && i +/- 1) i.e. surrounding columns
+            // (i && i +/- 1) i.e. surrounding rows
             for (int k = (i - 1); k < (i + 2); k++)
             {
-                // (j && j +/- 1) i.e. surrounding rows
+                // (j && j +/- 1) i.e. surrounding columns
                 for (int l = (j - 1); l < (j + 2); l++)
                 {
-                    // If pixel is out of the column
+                    // If pixel is out of the row
                     if (k < 0 || k >= height)
                     {
                         continue;
                     }
 
-                    // If pixel is out of the row
+                    // If pixel is out of the column
                     if (l < 0 || l >= width)
                     {
                         continue;
