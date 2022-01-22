@@ -1,3 +1,5 @@
+// Program to recover JPEG pictures from a file, searching for headers
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
