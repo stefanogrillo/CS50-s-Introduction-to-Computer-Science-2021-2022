@@ -32,3 +32,6 @@ Please leave a star ⭐️ if you like these solutions. More on the way, let's s
   - filter_(less).c
   - filter_(more).c
   - recover.c
+### - [Problem Set 5 (2022)](https://cs50.harvard.edu/x/2022/psets/5/)
+  - Lab 5
+    - inheritance.c
