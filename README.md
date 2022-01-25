@@ -8,30 +8,30 @@ Please leave a star ⭐️ if you like these solutions. More on the way, let's s
 
 ## Structure 
 ### - [Problem Set 1 (2021)](https://cs50.harvard.edu/x/2021/psets/1/)
-  - Lab 1
+  - [Lab 1](https://cs50.harvard.edu/x/2022/labs/1/)
     - hello.c
     - population.c
   - mario.c
   - cash.c
   - credit.c
 ### - [Problem Set 2 (2021)](https://cs50.harvard.edu/x/2021/psets/2/)
-  - Lab 2
+  - [Lab 2](https://cs50.harvard.edu/x/2022/labs/2/)
     - scrabble.c
   - readability.c
   - caesar.c
   - substitution.c
 ### - [Problem Set 3 (2022)](https://cs50.harvard.edu/x/2022/psets/3/)
-  - Lab 3
+  - [Lab 3](https://cs50.harvard.edu/x/2022/labs/3/)
     - answers.txt
   - plurality.c
   - runoff.c
   - tideman.c
 ### - [Problem Set 4 (2022)](https://cs50.harvard.edu/x/2022/psets/4/)
-  - Lab 4
+  - [Lab 4](https://cs50.harvard.edu/x/2022/labs/4/)
     - volume.c
   - filter_(less).c
   - filter_(more).c
   - recover.c
 ### - [Problem Set 5 (2022)](https://cs50.harvard.edu/x/2022/psets/5/)
-  - Lab 5
+  - [Lab 5](https://cs50.harvard.edu/x/2022/labs/5/)
     - inheritance.c
