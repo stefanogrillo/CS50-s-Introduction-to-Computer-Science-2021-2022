@@ -35,3 +35,4 @@ Please leave a star ⭐️ if you like these solutions. More on the way, let's s
 ### - [Problem Set 5 (2022)](https://cs50.harvard.edu/x/2022/psets/5/)
   - [Lab 5](https://cs50.harvard.edu/x/2022/labs/5/)
     - inheritance.c
+  - speller.c 
