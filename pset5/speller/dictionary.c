@@ -48,3 +48,36 @@ bool check(const char *word)
     }
     return false;
 }
+
+// Hashes word to a number (this version is slow) (26^3 buckets needed)
+//
+//unsigned int hash(const char *word)
+//{
+//    unsigned int count = 0;
+//    for (int i = 0; i < 3; i++)
+//    {
+//        int j = 0;
+//        if (word[i] != 'a' + j)
+//        {
+//            j++;
+//        }
+//        if (word[i] == 'a' + i)
+//        {
+//            count += j*26^(2 - i);
+//        }
+//    }
+//    return count;
+//}
+
+// Fast Hashing function retrieved from:
+// https://www.reddit.com/r/cs50/comments/1x6vc8/pset6_trie_vs_hashtable/
+//
+//unsigned int hash(const char *word)
+//{
+//    unsigned int number = 0;
+//    for (int i=0, n=strlen(word); i<n; i++)
+//    {
+//        number = (number << 2) ^ word[i];
+//    }
+//    return number % N;
+//}
