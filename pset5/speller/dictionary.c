@@ -81,3 +81,32 @@ bool check(const char *word)
 //    }
 //    return number % N;
 //}
+
+// My revisited version of an hash table
+// TIME IN TOTAL : 0.12 (LALALAND.TXT)
+//
+unsigned int hash(const char *word)
+{
+    unsigned int count = 0;
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
+        count += tolower(word[i]);
+    }
+    count = count % N;
+    return count;
+}
+
+
+// Loads dictionary into memory, returning true if successful, else false
+bool load(const char *dictionary)
+{
+    // Declare a temporary storage
+    char buffer[LENGTH + 1];
+
+    // Open the dictionary
+    FILE *inp_dictionary = fopen(dictionary, "r");
+    if (inp_dictionary == NULL)
+    {
+        printf("Could not load %s", dictionary);
+    }
+}
