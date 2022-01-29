@@ -109,4 +109,56 @@ bool load(const char *dictionary)
     {
         printf("Could not load %s", dictionary);
     }
+
+    // Read the dictionary
+    // Function: fscanf (FILE to be read, length to be read (in this case, a string), where to store)
+    // fscanf must be till the End Of File (EOF)
+    while (fscanf(inp_dictionary, "%s", buffer) != EOF)
+    {
+        // Create a new node
+        node *newnode = malloc(sizeof(node));
+        if (newnode == NULL)
+        {
+            return false;
+        }
+        strcpy(newnode->word, buffer);
+        newnode->next = NULL;
+        int position = hash(newnode->word); // Save the position in the hash table
+
+        if (table[position] == NULL)
+        {
+            table[position] = newnode;
+        }
+        else
+        {
+            // Set the node into the hash
+            newnode->next = table[position];
+            table[position] = newnode;
+        }
+        imported_words++;
+    }
+    fclose(inp_dictionary);
+    return true;
+}
+
+// Returns number of words in dictionary if loaded, else 0 if not yet loaded
+unsigned int size(void)
+{
+    return imported_words;
+}
+
+// Unloads dictionary from memory, returning true if successful, else false
+bool unload(void)
+{
+    // For every bucket
+    for (int i = 0; i < N; i++)
+    {
+        while (table[i] != NULL)
+        {
+            node *tmp = table[i]->next;
+            free(table[i]);
+            table[i] = tmp;
+        }
+    }
+    return true;
 }
