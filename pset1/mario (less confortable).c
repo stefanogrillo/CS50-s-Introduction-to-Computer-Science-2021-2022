@@ -16,19 +16,17 @@ int main (void)
 
 void draw(int n)
 {
-    // If nothing to draw
-    if(n <= 0)
-    {
-        return;
-    }
-
-    // Draw pyramid of height n - 1
-    draw(n-1);
-
     // Draw one more row of width n
     for(int i = 0; i < n; i++)
     {
-        printf("#");
+        for (int j = n - i - 1; j > 0; j--)
+        {
+            printf(" ");
+        }
+        for (int l = 0; l < i + 1; l++)
+        {
+            printf("#");
+        }
+        printf("\n");
     }
-    printf("\n");
 }
