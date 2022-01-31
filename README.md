@@ -11,7 +11,8 @@ Please leave a star ⭐️ if you like these solutions. More on the way, let's s
   - [Lab 1](https://cs50.harvard.edu/x/2021/labs/1/)
     - hello.c
     - population.c
-  - mario.c
+  - mario (less comfortable).c 
+  - mario (more comfortable).c
   - cash.c
   - credit.c
 ### - [Problem Set 2 (2021)](https://cs50.harvard.edu/x/2021/psets/2/)
@@ -36,3 +37,8 @@ Please leave a star ⭐️ if you like these solutions. More on the way, let's s
   - [Lab 5](https://cs50.harvard.edu/x/2022/labs/5/)
     - inheritance.c
   - speller.c 
+### - [Problem Set 6 (2022)](https://cs50.harvard.edu/x/2022/psets/6/)
+  - [Lab 6](https://cs50.harvard.edu/x/2022/labs/6/) 
+    - tournament.py
+  - mario (less comfortable).py
+  - mario (more comfortable).py
