@@ -10,6 +10,6 @@ while True:
     else:
         print("Height must be between 0 and 9 excluded")
 
-# Draw one more row of width n
+# Draw as many # as wanted 
 for i in range(height):
     print(" " * (height - i - 1) + "#" * (i + 1))
