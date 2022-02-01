@@ -1,19 +1,9 @@
 # Implement a program to recognize valid credit cards through Luhn’s Algorithm
 
-import sys
-
-
 def main():
-    # Check some conditions
-    while True:
-        ccnumber = input("Number: ")
-        length = len(str(ccnumber))
-        if length == 13 or length == 15 or length == 16:
-            break
-        else:
-            print("INVALID")
-            sys.exit()
-            
+    ccnumber = input("Number: ")
+    length = len(str(ccnumber))
+
     # Define counters
     sumodd = 0
     sumeven = 0
@@ -50,7 +40,7 @@ def main():
     elif lstccnumber[0] == 4 and (length == 13 or length == 16) and sum % 2 == 0:
         print("VISA")
     else:
-       print("INVALID")
+        print("INVALID")
 
 
 main()
