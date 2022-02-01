@@ -27,13 +27,13 @@ def main():
     odd = lstccnumber[-1::-2]
     # range(len(odd)) is useful to avoid int error
     for i in range(len(odd)):
-        sumodd += int(odd[i])
+        sumodd += odd[i]
 
     # Count the evens
     # Create a list starting from the second-to-last element, finishing at length 0, and moving back of 2 places
     even = lstccnumber[-2::-2]
     for i in range(len(even)):
-        tempeven = int(even[i]) * 2
+        tempeven = even[i] * 2
         sumeven += tempeven % 10
         sumeven += int(tempeven / 10)
 
