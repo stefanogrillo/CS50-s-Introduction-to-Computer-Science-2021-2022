@@ -5,7 +5,7 @@ from cs50 import get_float
 # Set a counter
 coins = 0
 
-# Check the conditions are met
+# Check if the conditions are met
 while True:
     money = get_float("Change owed: ")
     if money > 0:
@@ -14,7 +14,7 @@ while True:
 # Convert to cents and round
 money = round(int(money * 100))
 
-# Keep iterating to count
+# Keep iterating to count the coins
 while money > 0:
     if money >= 25:
         money -= 25
