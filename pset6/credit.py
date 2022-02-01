@@ -19,7 +19,7 @@ def main():
     sumeven = 0
     sum = 0
 
-    # It works transforming the ccnumber in a list (but with no transformation is more direct; I wanted to implement operations with lists)
+    # Transform the ccnumber in a list (btw with no "list" is more direct; I wanted to implement operations with lists)
     lstccnumber = [int(x) for x in str(ccnumber)]
 
     # Count the odds
@@ -43,13 +43,13 @@ def main():
     # Is it even?
     if sum % 2 == 0:
         # Has length 15 and first digit = 3 and second either 4 or 7?
-        if length == 15 and int(ccnumber[0]) == 3 and (int(ccnumber[1]) == 4 or int(ccnumber[1]) == 7):
+        if length == 15 and lstccnumber[0] == 3 and lstccnumber[1] == 4 or lstccnumber[1] == 7:
             print("AMEX")
         # Has length 16 and first digit = 5 and second digit between 0 and 6?
-        elif (int(ccnumber[0]) == 5 and length == 16) and 0 < int(ccnumber[1]) < 6:
+        elif lstccnumber[0] == 5 and length == 16 and 0 < lstccnumber[1] < 6:
             print("MASTERCARD")
         # Has length 13 or 16 and first digit = 4?
-        elif int(ccnumber[0]) == 4 and (length == 13 or length == 16):
+        elif lstccnumber[0] == 4 and (length == 13 or length == 16):
             print("VISA")
         else:
             print("INVALID")
