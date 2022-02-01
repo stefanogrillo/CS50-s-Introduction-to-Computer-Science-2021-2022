@@ -40,21 +40,17 @@ def main():
     sum = sumeven + sumodd
 
     # Identify the credit card
-    # Is it even?
-    if sum % 2 == 0:
-        # Has length 15 and first digit = 3 and second either 4 or 7?
-        if length == 15 and lstccnumber[0] == 3 and lstccnumber[1] == 4 or lstccnumber[1] == 7:
-            print("AMEX")
-        # Has length 16 and first digit = 5 and second digit between 0 and 6?
-        elif lstccnumber[0] == 5 and length == 16 and 0 < lstccnumber[1] < 6:
-            print("MASTERCARD")
-        # Has length 13 or 16 and first digit = 4?
-        elif lstccnumber[0] == 4 and (length == 13 or length == 16):
-            print("VISA")
-        else:
-            print("INVALID")
+    # Has length 15 and first digit = 3 and second either 4 or 7 and sum is even?
+    if length == 15 and lstccnumber[0] == 3 and lstccnumber[1] == 4 or lstccnumber[1] == 7 and sum % 2 == 0:
+        print("AMEX")
+    # Has length 16 and first digit = 5 and second digit between 0 and 6 and sum is even?
+    elif lstccnumber[0] == 5 and length == 16 and 0 < lstccnumber[1] < 6 and sum % 2 == 0:
+        print("MASTERCARD")
+    # Has length 13 or 16 and first digit = 4 and sum is even?
+    elif lstccnumber[0] == 4 and (length == 13 or length == 16) and sum % 2 == 0:
+        print("VISA")
     else:
-        print("INVALID")
+       print("INVALID")
 
 
 main()
