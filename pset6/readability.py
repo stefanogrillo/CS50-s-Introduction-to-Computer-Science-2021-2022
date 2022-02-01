@@ -18,5 +18,20 @@ def main():
     # BUT: import re
     # from https://github.com/gjacqual/CS50-readability-python/blob/main/readability.py
     
+    # Coleman-Liau formula
+    # Avg letters per 100 words
+    L = 100 * letters / words
+    # Avg words per 100 sentences
+    S = 100 * sentences / words
+    # Formula
+    CL = round(0.0588 * L - 0.296 * S - 15.8)
+
+    if CL > 16:
+        print("Grade: 16+")
+    elif CL < 1:
+        print("Before Grade 1")
+    else:
+        print(f"Grade {CL}")
+
     
 main()
