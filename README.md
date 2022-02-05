@@ -42,3 +42,6 @@ Please leave a star ⭐️ if you like these solutions. More on the way, let's s
     - tournament.py
   - mario (less comfortable).py
   - mario (more comfortable).py
+### - [Problem Set 7 (2022)](https://cs50.harvard.edu/x/2022/psets/7/)
+  - [Lab 7](https://cs50.harvard.edu/x/2022/labs/7/)
+    - songs.sql 
