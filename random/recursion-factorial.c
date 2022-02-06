@@ -21,16 +21,17 @@ int main()
 
 int factorialfunction(int n)
 {
-    // If the number is positive
+    // If the number is greater than 1 (not included)
     if (n > 1)
     {
         return n * factorialfunction(n - 1);
     }
-    // If the number is negative
-    if (n < 0)
+    // If the number is smaller than 1 (not included)
+    if (n < -1)
     {
         return n * factorialfunction(n + 1);
     }
+    // In case the number is -1, 0, or 1
     else
     {
         return 1;
