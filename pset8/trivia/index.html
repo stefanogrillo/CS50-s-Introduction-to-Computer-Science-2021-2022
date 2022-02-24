@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Trivia!</title>
+
+        <script>
+
+            // Load DOM (Document Object Model) then apply functions
+            window.addEventListener("load", function () {
+                let falses = document.querySelectorAll(".false");
+                for(let i = 0; i < falses.length; i++) {
+                    falses[i].addEventListener("click", function () {
+                        falses[i].style.backgroundColor="red";
+                        document.querySelector("#feedback1").innerHTML="False :(";
+                    });
+                }
+                let istrue = document.querySelector(".true");
+                istrue.addEventListener("click", function () {
+                    istrue.style.backgroundColor="green";
+                    document.querySelector('#feedback1').innerHTML="True :)";
+                });
+
+                // Check the free response
+                document.querySelector("#check").addEventListener("click", function() {
+                    let input = document.querySelector("input");
+                    if (input.value.toLowerCase() === "corsica" || input.value.toLowerCase() === "ajaccio" || input.value.toLowerCase() === "france") {
+                        input.style.backgroundColor = "green";
+                        document.querySelector("#feedback2").innerHTML = "True :)";
+                    } else {
+                        input.style.backgroundColor = "red";
+                        document.querySelector("#feedback2").innerHTML = "False :(";
+                    }
+                });
+            });
+        </script>
+
+    </head>
+    
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the capital of Romania?</h3>
+                <button class="false">Timisoara</button>
+                <button class="false">Budapest</button>
+                <button class="false">Skopje</button>
+                <button class="true">Bucharest</button>
+                <p id="feedback1"></p>
+
+            </div>
+
+            <div class="section">
+
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>Where did Napoleon born?</h3>
+                <input autocomplete="off" autofocus placeholder="Location" type="text"></input>
+                <button id="check">Submit and check</button>
+                <p id="feedback2"></p>
+
+            </div>
+        </div>
+    </body>
+</html>
