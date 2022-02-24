@@ -1,0 +1,254 @@
+/* Import Font From "Google Font" */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* Text */
+* {
+    box-sizing: border-box;         /* ensures everything is inside a box */
+    text-align: center;              /* horizontal alignment */
+    margin: 0;
+    padding: 0;                     /* space from border-box to center-box */
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Sections */
+.spaceTop {
+    margin-top: 80px;
+}
+
+.spaceTopBottom {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.section1 {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.section2 {
+    text-align: center;
+    background-color: #ffd700;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.section3 {
+    text-align: center;
+    background-color: #6fa9a1;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.spaceTopBottomSmall {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.small {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 10px;
+    font-size: 11px;
+}
+
+/* Table */
+table {
+    box-sizing: border-box;
+    padding: 80px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th, td {
+    text-align: left;
+    padding: 4px 20px;
+}
+
+table, th, td {
+    border: 1px solid #ffd700;
+    border-collapse: collapse;
+}
+
+/* Navigation bar with Computer Screen Size*/
+nav {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    background-color: #3b3b3b;
+    height: 50px;
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    /* overflow: auto; */
+}
+
+nav:after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+nav .logo {
+    float: left;
+    color: #e7e7e7;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 50px;
+    padding-left: 10%;
+    white-space: nowrap;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+/*     list-style: none;
+    position: relative; */
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 48px;
+    background: #3b3b3b;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: #e7e7e7;
+    text-decoration: none;
+    border-radius: 3px;
+    line-height: 3px;
+    font-size: 12px;
+    padding: 7px 30px;
+}
+
+nav ul li a:hover:not(.active) {
+    color: #ffffff;
+}
+
+/* Image */
+.imageIndex {
+    height: auto;
+    max-width: 250px;
+    object-fit: scale-down;
+}
+
+.imageBio {
+    width: 1000px;
+    max-width: 90%;
+    height: auto;
+    object-fit: scale-down;
+}
+
+.boxes {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+figure {
+    width: 25%;
+    background-color: white;
+    margin: 0%;
+    border: 1px solid;
+    box-sizing: border-box;
+    height: auto;
+    max-width: 90%;
+    object-fit: scale-down;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+figcaption {
+    padding: 10px 20px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    width: 15%;
+    background-color: inherit;
+    color: #e7e7e7;
+    padding: 16px;
+    font-size: 12px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    position: relative;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3b3b3b;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;                 /* puts the element in front */
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    font-size: 12px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    color: #e7e7e7;
+    padding: 12px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #3b3b3b;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3b3b3b;
+}
+
+@media (max-width: 919px){
+    .nav ul {
+        display: none;
+    }
+    .nav {
+        margin: 0;
+    }
+}
+
+@media (min-width: 920px){
+    .dropbtn, .dropdown, .dropdown-content, .dropdown-content a {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .nav.responsive {
+        position: relative;
+    }
+    .nav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .nav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
