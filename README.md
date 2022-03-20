@@ -51,3 +51,7 @@ Please leave a star ⭐️ if you like these solutions. More on the way, let's s
   - [Lab 8](https://cs50.harvard.edu/x/2022/labs/8/)
     - trivia.html
   - homepage.html  
+### - [Problem Set 9 (2022)](https://cs50.harvard.edu/x/2022/psets/9/)
+  - [Lab 9](https://cs50.harvard.edu/x/2022/labs/9/)
+    - birthdays
+  - finance
