@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add/Withdraw
+{% endblock %}
+
+{% block main %}
+    <form action="/addwithdraw" method="post">
+        <div class="mb-3">
+            <!-- Most IBAN have 2 Maiusc letters at the beginning and between 13, 14, and 16 numbers -->
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="origin" name="origin" placeholder="Insert IBAN" type="text" pattern="[A-Z]{2}[0-9]{11,14}" title="Must contain Country 2 Digit Code and between 11 and 14 numbers" required>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="cash" name="cash" placeholder="Insert Cash Amount" type="text" onkeypress="return event.charCode>=48 && event.charCode<=57 && event.charCode=45">
+        </div>
+        <div class="mb-3">
+            <select name="operation" id="operation">
+                <option value="add">Add</option>
+                <option value="withdraw">Withdraw</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

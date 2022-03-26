@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <!-- Use BootStrap to make the table -->
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+                <th>Other Options</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for stock in stocks %}
+                <tr>
+                    <td> {{ stock["symbol"] }} </td>
+                    <td> {{ stock["name"] }} </td>
+                    <td> {{ stock["totShares"] }} </td>
+                    <td> {{ usd(stock["price"]) }} </td>
+                    <td> {{ usd(stock["totShares"] * stock["price"]) }} </td>
+                    <td> <a class="myButton" href="/buy">Buy</a> <a class="myButton" href="/sell">Sell</a> </td>
+                </tr>
+            {% endfor %}
+
+            <tr>
+                <td><b>CASH</b></td>
+                <td colspan="4"></td>
+                <td><b>{{ usd(cash) }}</b></td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <td colspan="5"></td>
+            <td><b>{{ usd(total) }}</b></td>
+        </tfoot>
+
+    </table>
+{% endblock %}
