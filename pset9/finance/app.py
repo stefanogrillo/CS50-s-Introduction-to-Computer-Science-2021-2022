@@ -60,3 +60,62 @@ def index():
         return render_template("index.html", stocks=stocks, cash=cash, usd=usd, total=total)
     else:
         symbol = request.form.get("symbol")
+
+        
+@app.route("/buy", methods=["GET", "POST"])
+@login_required
+def buy():
+
+    # At this point we create a new table in the database, table called: Transactions
+    # Which includes columns: id, user_id, name, shares, price, type, symbol, time
+    # (CREATE TABLE transactions (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, name TEXT NOT NULL, 
+    #       shares INTEGER NOT NULL, price NUMERIC NOT NULL, type TEXT NOT NULL, symbol TEXT NOT NULL, time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    #       FOREIGN KEY(user_id) REFERENCES users(id) );
+
+    if request.method == "GET":
+        return render_template("buy.html")
+    else:
+        symbol = request.form.get("symbol").upper()
+        item = lookup(symbol)
+
+        if not symbol:
+            return apology("Insert the Symbol of a Company")
+        elif not item:
+            return apology("This was an Invalid Symbol")
+
+        try:
+            shares = int(request.form.get("shares"))
+        except:
+            return apology("Shares Must Be Integer")
+
+        if shares <= 0:
+            return apology("Shares Must Be Positive")
+
+        user_id = session["user_id"]
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
+
+        item_name = item["name"]
+        item_price = item["price"]
+        total_price = item_price * shares
+
+        if cash < total_price:
+            return apology("You Can't Afford It Yet")
+        else:
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", cash - total_price, user_id)
+            db.execute("INSERT INTO transactions(user_id, name, shares, price, type, symbol) VALUES (?, ?, ?, ?, ?, ?)",
+                user_id, item_name, shares, item_price, "buy", symbol)
+
+        return redirect('/')
+
+
+@app.route("/history")
+@login_required
+def history():
+
+    user_id = session["user_id"]
+    symbols = db.execute("SELECT symbol FROM transactions WHERE user_id = ? GROUP BY symbol", user_id)
+    transactions = db.execute("SELECT type, symbol, price, shares, time FROM transactions WHERE user_id = ?",
+                        user_id)
+
+    return render_template("history.html", transactions=transactions, usd=usd, symbols=symbols)
+
