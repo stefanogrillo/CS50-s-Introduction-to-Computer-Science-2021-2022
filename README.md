@@ -1,5 +1,5 @@
 # CS50x-s-Introduction-to-Computer-Science-2021-2022
-Harvard's CS50: Introduction To Computer Science 2021 - _**solutions uploaded from time to time**_
+Harvard's CS50: Introduction To Computer Science 2021/2022
 
 This repository will contain my solutions to [CS50 course from Harvard](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x), which I'm still taking.
 So far you can find solutions to problem sets till 9, included. Every solution obtained maximum *check50* and maximum *style50*. 
